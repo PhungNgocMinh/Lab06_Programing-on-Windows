@@ -44,7 +44,7 @@ ProductManager lets users manage a list of products stored in memory. Beyond the
 
 ```bash
 git clone https://github.com/PhungNgocMinh/Lab06_programing-on-windows.git
-cd ProductManager
+cd Lab06_programing-on-windows
 ```
 
 1. Open `ProductManager.sln` in Visual Studio
