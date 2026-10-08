@@ -51,14 +51,17 @@ cd Lab06_programing-on-windows
 2. Build the solution (`Ctrl + Shift + B`)
 3. Run the app (`F5`)
 
+**Depedencies note:** The program's solution is using the .NET Framework 4.7.2.
+If your IDE cannot run the program, resolve this by installing the **.NET Framework 4.7.2 Developer Pack** at https://aka.ms/msbuild/developerpacks.
+
 ## Project Structure
 
 ```
 ProductManager/
-├── Models/
-│   └── Product.cs          # Product class
-├── Forms/
-│   └── MainForm.cs         # Main UI and event handling
+├── .../
+│   └── ...
+├── .../
+│   └── ...
 ├── Program.cs
 └── README.md
 ```
