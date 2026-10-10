@@ -58,12 +58,16 @@ If your IDE cannot run the program, resolve this by installing the **.NET Framew
 
 ```
 ProductManager/
-├── .../
-│   └── ...
-├── .../
-│   └── ...
+├── Model/
+│   └── Product.cs
+├── Data/
+│   ├── ProductRepository.cs
+│   └── SampleData.cs
+├── Forms/
+│   ├── MainForm.cs
+│   └── MainForm.designer.cs
 ├── Program.cs
-└── README.md
+└── ProductManager.csproj
 ```
 
 ## Screenshots
