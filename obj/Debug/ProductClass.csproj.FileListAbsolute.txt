@@ -1,0 +1,10 @@
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.csproj.AssemblyReference.cache
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.Configuration.Form1.resources
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.csproj.GenerateResource.cache
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\bin\Debug\ProductClass.exe.config
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\bin\Debug\ProductClass.exe
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\bin\Debug\ProductClass.pdb
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.Properties.Resources.resources
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.csproj.CoreCompileInputs.cache
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.exe
+C:\PhungNgocMinh\Học phần\HK3_2026-2027\LapTrinhTrenWindows\Lab06\obj\Debug\ProductClass.pdb

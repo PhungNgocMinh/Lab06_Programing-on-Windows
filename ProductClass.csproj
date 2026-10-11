@@ -48,40 +48,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClASS\Product.cs" />
+    <Compile Include="Data\ProductRepository.cs" />
+    <Compile Include="Data\SampleData.cs" />
+    <Compile Include="Form\Form1.cs" />
+    <Compile Include="Form\Form1.Designer.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <EmbeddedResource Include="Configuration\Form1.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="Configuration\.idea\.idea.Lab06.dir\.idea\.gitignore" />
+    <Content Include="Configuration\.idea\.idea.Lab06.dir\.idea\indexLayout.xml" />
+    <Content Include="Configuration\.idea\.idea.Lab06.dir\.idea\projectSettingsUpdater.xml" />
+    <Content Include="Configuration\.idea\.idea.Lab06.dir\.idea\workspace.xml" />
+    <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\.gitignore" />
+    <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\indexLayout.xml" />
+    <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\projectSettingsUpdater.xml" />
+    <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\workspace.xml" />
+    <Content Include="obj\Debug\ProductClass.Configuration.Form1.resources" />
+    <Content Include="obj\Debug\ProductClass.Configuration.Properties.Resources.resources" />
+    <Content Include="obj\Debug\ProductClass.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\ProductClass.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\ProductClass.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ProductClass.csproj.GenerateResource.cache" />
+    <Content Include="obj\Debug\ProductClass.exe" />
+    <Content Include="obj\Debug\ProductClass.pdb" />
+    <Content Include="obj\Debug\ProductClass.Properties.Resources.resources" />
+    <Content Include="obj\Debug\ProductClass.Resources.resources" />
+    <Content Include="Properties\Settings.settings" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\App.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
 ﻿
-namespace ProductClass
+namespace ProductClass.Form
 {
     partial class Form1
     {

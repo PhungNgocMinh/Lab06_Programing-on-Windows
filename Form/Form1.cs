@@ -1,4 +1,4 @@
-﻿using ProductClass.ClASS;
+﻿using ProductClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,13 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProductClass
+using ProductClass.Data;    //  For BindingSource
+
+namespace ProductClass.Form
 {
-    public partial class Form1 : Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
+        private readonly ProductRepository _repository = new ProductRepository();   //  Data storing & mediator for BindingSource
+        private readonly BindingSource _bindingSource = new BindingSource();
         public Form1()
         {
             InitializeComponent();
+            SetupBinding();
+        }
+        
+        private void SetupBinding()
+        {
+            _bindingSource.DataSource = _repository.Products;
+            dgvSanPham.DataSource = _bindingSource;
         }
 
         private void Form1_Load(object sender, EventArgs e)
