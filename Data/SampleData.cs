@@ -10,39 +10,16 @@ namespace ProductClass.Data
         {
             return new List<Product>
             {
-                new Product
-                {
-                    MaSP = "SP001",
-                    TenSP = "Laptop Dell Inspiron",
-                    LoaiSP = "Laptop",
-                    DonGia = 15500000m,
-                    SoLuong = 10,
-                    NgayNhap = new DateTime(2025, 1, 15),
-                    ConKinhDoanh = true,
-                    DuongDanAnh = ""
-                },
-                new Product
-                {
-                    MaSP = "SP002",
-                    TenSP = "Chuột Logitech M331",
-                    LoaiSP = "Phụ kiện",
-                    DonGia = 350000m,
-                    SoLuong = 50,
-                    NgayNhap = new DateTime(2025, 2, 3),
-                    ConKinhDoanh = true,
-                    DuongDanAnh = ""
-                },
-                new Product
-                {
-                    MaSP = "SP003",
-                    TenSP = "Bàn phím cơ Keychron K2",
-                    LoaiSP = "Phụ kiện",
-                    DonGia = 1800000m,
-                    SoLuong = 0,
-                    NgayNhap = new DateTime(2024, 11, 20),
-                    ConKinhDoanh = false,
-                    DuongDanAnh = ""
-                }
+                new Product("SP001", "Cà phê Sữa Đá", "Đồ uống", 29000, 50, DateTime.Now, true, @"Images\caphe.jpg"),
+                new Product("SP002", "Trà Đào Cam Sả", "Đồ uống", 39000, 30, DateTime.Now, true, @"Images\tradao.jpg"),
+                new Product("SP003", "Bánh Tiramisu", "Bánh ngọt", 45000, 15, DateTime.Now, false, @"Images\tiramisu.jpg"),
+                new Product("SP004", "Cà phê Đen", "Đồ uống", 20000, 40, DateTime.Now, true, @"Images\capheden.jpg"),
+                new Product("SP005", "Matcha Latte (Nho)", "Đồ uống", 40000, 25, DateTime.Now, true, @"Images\matcha_nho.jpg"),
+                new Product("SP006", "Matcha Latte (Lớn)", "Đồ uống", 70000, 20, DateTime.Now, true, @"Images\matcha_lon.jpg"),
+                new Product("SP007", "Americano", "Đồ uống", 30000, 35, DateTime.Now, true, @"Images\americano.jpg"),
+                new Product("SP008", "Bánh Bông Lan Kem Tươi (Nhỏ)", "Bánh ngọt", 38000, 10, DateTime.Now, true, @"Images\bonglan_nho.jpg"),
+                new Product("SP009", "Bánh Bông Lan Kem Tươi (Lớn)", "Bánh ngọt", 180000, 5, DateTime.Now, true, @"Images\bonglan_lon.jpg"),
+                new Product("SP010", "Bánh Flan", "Bánh ngọt", 15000, 50, DateTime.Now, true, @"Images\flan.jpg")
             };
         }
     }
