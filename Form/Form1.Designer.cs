@@ -1,4 +1,3 @@
-﻿
 namespace ProductClass.Form
 {
     partial class Form1
@@ -34,9 +33,8 @@ namespace ProductClass.Form
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grpThongTin
-            // 
+            
+            //  grpThongTin
             this.grpThongTin.Controls.Add(this.lblMaSP);
             this.grpThongTin.Controls.Add(this.txtMaSP);
             this.grpThongTin.Controls.Add(this.lblTenSP);
@@ -62,9 +60,8 @@ namespace ProductClass.Form
             this.grpThongTin.TabStop = false;
             this.grpThongTin.Text = "Thông tin sản phẩm(MINH HỌA)";
             this.grpThongTin.Enter += new System.EventHandler(this.grpThongTin_Enter);
-            // 
-            // lblMaSP
-            // 
+             
+            //  lblMaSP
             this.lblMaSP.AutoSize = true;
             this.lblMaSP.Location = new System.Drawing.Point(11, 27);
             this.lblMaSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -73,18 +70,16 @@ namespace ProductClass.Form
             this.lblMaSP.TabIndex = 0;
             this.lblMaSP.Text = "Mã SP:";
             this.lblMaSP.Click += new System.EventHandler(this.lblMaSP_Click);
-            // 
-            // txtMaSP
-            // 
+             
+            //  txtMaSP
             this.txtMaSP.Location = new System.Drawing.Point(82, 24);
             this.txtMaSP.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(166, 20);
             this.txtMaSP.TabIndex = 0;
             this.txtMaSP.TextChanged += new System.EventHandler(this.txtMaSP_TextChanged);
-            // 
-            // lblTenSP
-            // 
+            
+            //  lblTenSP
             this.lblTenSP.AutoSize = true;
             this.lblTenSP.Location = new System.Drawing.Point(11, 59);
             this.lblTenSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -93,18 +88,16 @@ namespace ProductClass.Form
             this.lblTenSP.TabIndex = 1;
             this.lblTenSP.Text = "Tên SP:";
             this.lblTenSP.Click += new System.EventHandler(this.lblTenSP_Click);
-            // 
-            // txtTenSP
-            // 
+             
+            //  txtTenSP
             this.txtTenSP.Location = new System.Drawing.Point(82, 57);
             this.txtTenSP.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(166, 20);
             this.txtTenSP.TabIndex = 1;
             this.txtTenSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
-            // 
-            // lblLoaiSP
-            // 
+            
+            //  lblLoaiSP
             this.lblLoaiSP.AutoSize = true;
             this.lblLoaiSP.Location = new System.Drawing.Point(11, 92);
             this.lblLoaiSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -113,9 +106,8 @@ namespace ProductClass.Form
             this.lblLoaiSP.TabIndex = 2;
             this.lblLoaiSP.Text = "Loại SP:";
             this.lblLoaiSP.Click += new System.EventHandler(this.lblLoaiSP_Click);
-            // 
-            // cboLoaiSP
-            // 
+            
+            //  cboLoaiSP
             this.cboLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiSP.FormattingEnabled = true;
             this.cboLoaiSP.Items.AddRange(new object[] {
@@ -129,9 +121,8 @@ namespace ProductClass.Form
             this.cboLoaiSP.Size = new System.Drawing.Size(166, 21);
             this.cboLoaiSP.TabIndex = 2;
             this.cboLoaiSP.SelectedIndexChanged += new System.EventHandler(this.cboLoaiSP_SelectedIndexChanged);
-            // 
-            // lblDonGia
-            // 
+            
+            //  lblDonGia
             this.lblDonGia.AutoSize = true;
             this.lblDonGia.Location = new System.Drawing.Point(11, 124);
             this.lblDonGia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -140,9 +131,8 @@ namespace ProductClass.Form
             this.lblDonGia.TabIndex = 3;
             this.lblDonGia.Text = "Đơn giá:";
             this.lblDonGia.Click += new System.EventHandler(this.lblDonGia_Click);
-            // 
-            // txtDonGia
-            // 
+             
+            //  txtDonGia
             this.txtDonGia.Location = new System.Drawing.Point(82, 122);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtDonGia.Name = "txtDonGia";
@@ -151,9 +141,8 @@ namespace ProductClass.Form
             this.txtDonGia.Text = "5";
             this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
-            // 
-            // lblSoLuong
-            // 
+            
+            //  lblSoLuong
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Location = new System.Drawing.Point(270, 27);
             this.lblSoLuong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -162,9 +151,8 @@ namespace ProductClass.Form
             this.lblSoLuong.TabIndex = 4;
             this.lblSoLuong.Text = "Số lượng:";
             this.lblSoLuong.Click += new System.EventHandler(this.lblSoLuong_Click);
-            // 
-            // nudSoLuong
-            // 
+             
+            //  nudSoLuong
             this.nudSoLuong.Location = new System.Drawing.Point(349, 24);
             this.nudSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.nudSoLuong.Maximum = new decimal(new int[] {
@@ -177,9 +165,8 @@ namespace ProductClass.Form
             this.nudSoLuong.TabIndex = 4;
             this.nudSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudSoLuong.ValueChanged += new System.EventHandler(this.nudSoLuong_ValueChanged);
-            // 
-            // lblNgayNhap
-            // 
+             
+            //  lblNgayNhap
             this.lblNgayNhap.AutoSize = true;
             this.lblNgayNhap.Location = new System.Drawing.Point(270, 59);
             this.lblNgayNhap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -188,9 +175,8 @@ namespace ProductClass.Form
             this.lblNgayNhap.TabIndex = 5;
             this.lblNgayNhap.Text = "Ngày nhập:";
             this.lblNgayNhap.Click += new System.EventHandler(this.lblNgayNhap_Click);
-            // 
-            // dtpNgayNhap
-            // 
+             
+            //  dtpNgayNhap
             this.dtpNgayNhap.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhap.Location = new System.Drawing.Point(349, 57);
@@ -199,9 +185,8 @@ namespace ProductClass.Form
             this.dtpNgayNhap.Size = new System.Drawing.Size(98, 20);
             this.dtpNgayNhap.TabIndex = 5;
             this.dtpNgayNhap.ValueChanged += new System.EventHandler(this.dtpNgayNhap_ValueChanged);
-            // 
-            // chkConKinhDoanh
-            // 
+            
+            //  chkConKinhDoanh
             this.chkConKinhDoanh.AutoSize = true;
             this.chkConKinhDoanh.Checked = true;
             this.chkConKinhDoanh.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -213,9 +198,8 @@ namespace ProductClass.Form
             this.chkConKinhDoanh.Text = "Còn kinh doanh";
             this.chkConKinhDoanh.UseVisualStyleBackColor = true;
             this.chkConKinhDoanh.CheckedChanged += new System.EventHandler(this.chkConKinhDoanh_CheckedChanged);
-            // 
-            // lblDuongDanAnh
-            // 
+             
+            //  lblDuongDanAnh
             this.lblDuongDanAnh.AutoSize = true;
             this.lblDuongDanAnh.Location = new System.Drawing.Point(270, 124);
             this.lblDuongDanAnh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -224,18 +208,16 @@ namespace ProductClass.Form
             this.lblDuongDanAnh.TabIndex = 7;
             this.lblDuongDanAnh.Text = "Đường dẫn ảnh (CHƯA HOÀN CHỈNH):";
             this.lblDuongDanAnh.Click += new System.EventHandler(this.lblDuongDanAnh_Click);
-            // 
-            // txtDuongDanAnh
-            // 
+            
+            //  txtDuongDanAnh
             this.txtDuongDanAnh.Location = new System.Drawing.Point(349, 122);
             this.txtDuongDanAnh.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuongDanAnh.Name = "txtDuongDanAnh";
             this.txtDuongDanAnh.ReadOnly = true;
             this.txtDuongDanAnh.Size = new System.Drawing.Size(114, 20);
             this.txtDuongDanAnh.TabIndex = 7;
-            // 
-            // btnChonAnh
-            // 
+            
+            //  btnChonAnh
             this.btnChonAnh.Location = new System.Drawing.Point(465, 122);
             this.btnChonAnh.Margin = new System.Windows.Forms.Padding(2);
             this.btnChonAnh.Name = "btnChonAnh";
@@ -244,9 +226,8 @@ namespace ProductClass.Form
             this.btnChonAnh.Text = "Chọn...(NOT COMPLETED)";
             this.btnChonAnh.UseVisualStyleBackColor = true;
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
-            // 
-            // grpAnh
-            // 
+             
+            //  grpAnh
             this.grpAnh.Controls.Add(this.picAnh);
             this.grpAnh.Location = new System.Drawing.Point(544, 10);
             this.grpAnh.Margin = new System.Windows.Forms.Padding(2);
@@ -257,9 +238,8 @@ namespace ProductClass.Form
             this.grpAnh.TabStop = false;
             this.grpAnh.Text = "Hình ảnh";
             this.grpAnh.Enter += new System.EventHandler(this.grpAnh_Enter);
-            // 
-            // picAnh
-            // 
+            
+            //  picAnh
             this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picAnh.Location = new System.Drawing.Point(11, 20);
             this.picAnh.Margin = new System.Windows.Forms.Padding(2);
@@ -269,9 +249,8 @@ namespace ProductClass.Form
             this.picAnh.TabIndex = 0;
             this.picAnh.TabStop = false;
             this.picAnh.Click += new System.EventHandler(this.picAnh_Click);
-            // 
-            // btnThem
-            // 
+             
+            //  btnThem
             this.btnThem.Location = new System.Drawing.Point(23, 185);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
@@ -280,9 +259,8 @@ namespace ProductClass.Form
             this.btnThem.Text = "Thêm(NOT FINISHED)";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dgvSanPham
-            // 
+
+            //  dgvSanPham
             this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -296,9 +274,8 @@ namespace ProductClass.Form
             this.dgvSanPham.Size = new System.Drawing.Size(732, 264);
             this.dgvSanPham.TabIndex = 3;
             this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellContentClick);
-            // 
-            // Form1
-            // 
+
+            //  Form1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 505);
