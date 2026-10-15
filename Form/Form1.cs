@@ -33,6 +33,11 @@ namespace ProductClass.Form
             dgvSanPham.DataSource = _bindingSource;
             GridSortConfigurator.Apply(dgvSanPham);
         }
+        
+        private void ShowAll()
+        {
+            _bindingSource.DataSource = _repository.Products;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,6 +46,69 @@ namespace ProductClass.Form
 
             dgvSanPham.CellClick -= dgvSanPham_CellClick;
             dgvSanPham.CellClick += dgvSanPham_CellClick;
+
+            KhoiTaoCacNutBam();
+        }
+
+        private void KhoiTaoCacNutBam()
+        {
+            btnThem.Text = "Thêm";
+
+            if (this.Controls.Find("btnSua", true).Length == 0)
+            {
+                Button btnSua = new Button
+                {
+                    Name = "btnSua",
+                    Text = "Sửa",
+                    Size = new Size(100, btnThem.Height),
+                    Location = new Point(btnThem.Right + 10, btnThem.Top),
+                    UseVisualStyleBackColor = true
+                };
+                btnSua.Click += btnSua_Click;
+                this.Controls.Add(btnSua);
+            }
+
+            if (this.Controls.Find("btnXoa", true).Length == 0)
+            {
+                Button btnXoa = new Button
+                {
+                    Name = "btnXoa",
+                    Text = "Xóa",
+                    Size = new Size(100, btnThem.Height),
+                    Location = new Point(btnThem.Right + 120, btnThem.Top),
+                    UseVisualStyleBackColor = true
+                };
+                btnXoa.Click += btnXoa_Click;
+                this.Controls.Add(btnXoa);
+            }
+
+            if (this.Controls.Find("btnTimKiem", true).Length == 0)
+            {
+                Button btnTimKiem = new Button
+                {
+                    Name = "btnTimKiem",
+                    Text = "Tìm kiếm Mã SP",
+                    Size = new Size(120, btnThem.Height),
+                    Location = new Point(btnThem.Right + 230, btnThem.Top),
+                    UseVisualStyleBackColor = true
+                };
+                btnTimKiem.Click += btnTimKiem_Click;
+                this.Controls.Add(btnTimKiem);
+            }
+
+            if (this.Controls.Find("btnLamMoi", true).Length == 0)
+            {
+                Button btnLamMoi = new Button
+                {
+                    Name = "btnLamMoi",
+                    Text = "Làm mới",
+                    Size = new Size(100, btnThem.Height),
+                    Location = new Point(btnThem.Right + 360, btnThem.Top),
+                    UseVisualStyleBackColor = true
+                };
+                btnLamMoi.Click += btnLamMoi_Click;
+                this.Controls.Add(btnLamMoi);
+            }
         }
 
         private void ClearInput()
@@ -53,21 +121,43 @@ namespace ProductClass.Form
             dtpNgayNhap.Value = DateTime.Now;
             chkConKinhDoanh.Checked = false;
             txtDuongDanAnh.Clear();
+            picAnh.Image = null;
         }
 
         private bool ValidateInput()
         {
-            if (string.IsNullOrWhiteSpace(txtMaSP.Text) || string.IsNullOrWhiteSpace(txtTenSP.Text))
+            if (string.IsNullOrWhiteSpace(txtMaSP.Text))
             {
-                MessageBox.Show("Mã và tên sản phẩm không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mã sản phẩm không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaSP.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtTenSP.Text))
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenSP.Focus();
                 return false;
             }
             if (!decimal.TryParse(txtDonGia.Text, out decimal price) || price <= 0)
             {
                 MessageBox.Show("Đơn giá phải là số và lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDonGia.Focus();
                 return false;
             }
             return true;
+        }
+
+        private void TimKiemTheoMaSP()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaSP.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Mã SP cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSP.Focus();
+                ShowAll();
+                return;
+            }
+
+            _bindingSource.DataSource = _repository.Search(txtMaSP.Text);
         }
 
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -150,10 +240,17 @@ namespace ProductClass.Form
         {
             if (!ValidateInput()) return;
 
+            if (_repository.Products.Any(p => p.MaSP != null && p.MaSP.Equals(txtMaSP.Text.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                MessageBox.Show("Mã sản phẩm đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSP.Focus();
+                return;
+            }
+
             Product newProduct = new Product
             {
-                MaSP = txtMaSP.Text,
-                TenSP = txtTenSP.Text,
+                MaSP = txtMaSP.Text.Trim(),
+                TenSP = txtTenSP.Text.Trim(),
                 LoaiSP = cboLoaiSP.SelectedItem?.ToString() ?? "Khác",
                 DonGia = decimal.Parse(txtDonGia.Text),
                 SoLuong = (int)nudSoLuong.Value,
@@ -162,59 +259,60 @@ namespace ProductClass.Form
                 DuongDanAnh = txtDuongDanAnh.Text
             };
 
-            _bindingSource.Add(newProduct);
+            _repository.Add(newProduct);
+            ShowAll();
             MessageBox.Show("Đã thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearInput();
         }
 
-        public void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            if (_bindingSource.Current != null && ValidateInput())
+            if (dgvSanPham.CurrentRow == null) return;
+            
+            Product current = dgvSanPham.CurrentRow.DataBoundItem as Product;
+            if (current == null || !ValidateInput()) return;
+            
+            if (_repository.Exists(txtMaSP.Text.Trim(), current))   // ADD
             {
-                Product current = (Product)_bindingSource.Current;
-                current.MaSP = txtMaSP.Text;
-                current.TenSP = txtTenSP.Text;
-                current.LoaiSP = cboLoaiSP.SelectedItem?.ToString() ?? "Khác";
-                current.DonGia = decimal.Parse(txtDonGia.Text);
-                current.SoLuong = (int)nudSoLuong.Value;
-                current.NgayNhap = dtpNgayNhap.Value;
-                current.ConKinhDoanh = chkConKinhDoanh.Checked;
-                current.DuongDanAnh = txtDuongDanAnh.Text;
+                MessageBox.Show("Mã sản phẩm đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            current.MaSP = txtMaSP.Text.Trim();
+            current.TenSP = txtTenSP.Text.Trim();
+            current.LoaiSP = cboLoaiSP.SelectedItem?.ToString() ?? "Khác";
+            current.DonGia = decimal.Parse(txtDonGia.Text);
+            current.SoLuong = (int)nudSoLuong.Value;
+            current.NgayNhap = dtpNgayNhap.Value;
+            current.ConKinhDoanh = chkConKinhDoanh.Checked;
+            current.DuongDanAnh = txtDuongDanAnh.Text;
 
-                _bindingSource.ResetCurrentItem();
-                MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _bindingSource.ResetCurrentItem();
+            MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (dgvSanPham.CurrentRow == null) return;
+            Product current = dgvSanPham.CurrentRow.DataBoundItem as Product;
+            if (current == null) return;
+
+            if (MessageBox.Show("Bạn có chắc muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                _repository.Products.Remove(current);
+                ShowAll();
+                ClearInput();
             }
         }
 
-        public void btnXoa_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (_bindingSource.Current != null)
-            {
-                if (MessageBox.Show("Bạn có chắc muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    _bindingSource.RemoveCurrent();
-                    ClearInput();
-                }
-            }
+            TimKiemTheoMaSP();
         }
 
-        public void btnTimKiem_Click(object sender, EventArgs e)
+        private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            TextBox txtTimKiem = this.Controls.Find("txtTimKiem", true).FirstOrDefault() as TextBox;
-            if (txtTimKiem != null)
-            {
-                string keyword = txtTimKiem.Text.ToLower();
-                var searchResult = _repository.Products.Where(p =>
-                    (p.TenSP != null && p.TenSP.ToLower().Contains(keyword)) ||
-                    (p.MaSP != null && p.MaSP.ToLower().Contains(keyword))).ToList();
-
-                _bindingSource.DataSource = new SortableBindingList<Product>(searchResult);
-            }
-        }
-
-        public void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            _bindingSource.DataSource = _repository.Products;
+            ShowAll();
             ClearInput();
         }
 

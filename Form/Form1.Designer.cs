@@ -58,7 +58,7 @@ namespace ProductClass.Form
             this.grpThongTin.Size = new System.Drawing.Size(525, 171);
             this.grpThongTin.TabIndex = 0;
             this.grpThongTin.TabStop = false;
-            this.grpThongTin.Text = "Thông tin sản phẩm(MINH HỌA)";
+            this.grpThongTin.Text = "Thông tin sản phẩm";
             this.grpThongTin.Enter += new System.EventHandler(this.grpThongTin_Enter);
              
             //  lblMaSP
@@ -206,7 +206,7 @@ namespace ProductClass.Form
             this.lblDuongDanAnh.Name = "lblDuongDanAnh";
             this.lblDuongDanAnh.Size = new System.Drawing.Size(194, 13);
             this.lblDuongDanAnh.TabIndex = 7;
-            this.lblDuongDanAnh.Text = "Đường dẫn ảnh (CHƯA HOÀN CHỈNH):";
+            this.lblDuongDanAnh.Text = "Đường dẫn ảnh:";
             this.lblDuongDanAnh.Click += new System.EventHandler(this.lblDuongDanAnh_Click);
             
             //  txtDuongDanAnh
@@ -256,7 +256,7 @@ namespace ProductClass.Form
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(145, 28);
             this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm(NOT FINISHED)";
+            this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 

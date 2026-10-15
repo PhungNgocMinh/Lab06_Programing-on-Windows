@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Data\ProductRepository.cs" />
     <Compile Include="Data\SampleData.cs" />
-    <Compile Include="Data\SortableBindingList.cs" />
+    <Compile Include="Data\SortableBidingList.cs" />
     <Compile Include="Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +74,16 @@
     <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\indexLayout.xml" />
     <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\projectSettingsUpdater.xml" />
     <Content Include="Configuration\.idea\.idea.ProductClass.dir\.idea\workspace.xml" />
+    <Content Include="Images\americano.jpg" />
+    <Content Include="Images\bonglan_lon.jpg" />
+    <Content Include="Images\bonglan_nho.jpg" />
     <Content Include="Images\caphe.jpg" />
+    <Content Include="Images\capheden.jpg" />
+    <Content Include="Images\flan.jpg" />
+    <Content Include="Images\matcha_lon.jpg" />
+    <Content Include="Images\matcha_nho.jpg" />
+    <Content Include="Images\tiramisu.jpg" />
+    <Content Include="Images\tradao.jpg" />
     <Content Include="obj\Debug\ProductClass.Configuration.Form1.resources" />
     <Content Include="obj\Debug\ProductClass.Configuration.Properties.Resources.resources" />
     <Content Include="obj\Debug\ProductClass.csproj.AssemblyReference.cache" />
@@ -86,7 +95,6 @@
     <Content Include="obj\Debug\ProductClass.Properties.Resources.resources" />
     <Content Include="obj\Debug\ProductClass.Resources.resources" />
     <Content Include="Properties\Settings.settings" />
-    <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
