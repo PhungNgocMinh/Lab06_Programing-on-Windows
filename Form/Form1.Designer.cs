@@ -111,9 +111,9 @@ namespace ProductClass.Form
             this.cboLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiSP.FormattingEnabled = true;
             this.cboLoaiSP.Items.AddRange(new object[] {
-            "Văn phòng phẩm",
-            "Đồ gia dụng",
-            "Điện tử",
+            "Nước giải khát",
+            "Bánh ngọt",
+            "Tráng miệng",
             "Khác"});
             this.cboLoaiSP.Location = new System.Drawing.Point(82, 89);
             this.cboLoaiSP.Margin = new System.Windows.Forms.Padding(2);
